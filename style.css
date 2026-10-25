@@ -178,3 +178,11 @@ footer p {
         padding: 15px;
     }
 }
+nav {
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+nav a {
+    font-size: 14px;
+}
