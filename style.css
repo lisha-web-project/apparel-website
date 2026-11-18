@@ -21,20 +21,29 @@ header h1 {
     color: #315b8a;
 }
 
+
 /* Navigation */
 nav {
     margin-top: 15px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav a {
     text-decoration: none;
     color: #333;
     font-size: 15px;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
 }
+
+nav a:hover {
+    color: #315b8a;
+}
+
 
 /* Hero Section */
 .hero {
@@ -60,6 +69,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /* Collection Section */
@@ -90,14 +100,10 @@ button {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #eee0d8;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover Effect */
-.product-card:hover {
-    transform: translateY(-5px);
-}
-
 .product-card h3 {
     color: #315b8a;
     margin-bottom: 12px;
@@ -239,10 +245,6 @@ footer p {
 }
 /* Week 2: Product Card Hover Effect */
 
-.product-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -253,25 +255,6 @@ button:hover {
     transform: scale(1.05);
     transition: 0.3s ease;
 }
-/* Week 2: Responsive Navigation */
-
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-nav a {
-    padding: 8px 12px;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #315b8a;
-}
-
 /* Mobile Navigation */
 
 @media (max-width: 600px) {
@@ -334,4 +317,27 @@ nav a:hover {
 
 .product-card.hidden {
     display: none;
+}
+/* Week 4: Keyboard Focus Accessibility */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #e67e22;
+    outline-offset: 4px;
+}
+/* Week 4: Skip Navigation Link */
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background-color: #315b8a;
+    color: white;
+    padding: 10px 15px;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 10px;
 }
