@@ -23,13 +23,15 @@ filterButtons.forEach(function(button) {
 
     button.addEventListener("click", function() {
 
-        // Remove active class from all buttons
+        // Remove active class and update accessibility
         filterButtons.forEach(function(btn) {
             btn.classList.remove("active");
+            btn.setAttribute("aria-pressed","false");
         });
 
         // Add active class to clicked button
         button.classList.add("active");
+        button.setAttribute("aria-pressed","true");
 
         // Get selected category
         const selectedCategory = button.getAttribute("data-filter");
@@ -41,7 +43,6 @@ filterButtons.forEach(function(button) {
 
             if (
                 selectedCategory === "all" ||
-                selectedCategory === "dresses" ||
                 selectedCategory === cardCategory
             ) {
                 card.classList.remove("hidden");
